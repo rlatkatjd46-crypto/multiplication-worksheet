@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초등학교 2학년 곱셈 세로셈 학습지 | 두 자릿수 × 한 자릿수</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧸</text></svg>">
+</head>
+<body>
+
+    <!-- 상단 헤더 & 컨트롤 바 -->
+    <header class="app-header">
+        <div class="header-container">
+            <div class="logo-group">
+                <span class="logo-icon">☁️</span>
+                <div class="title-text">
+                    <h1>몽실몽실 곱셈 놀이터 <span>✨</span></h1>
+                    <p>초등학교 2학년 2학기 · 두 자릿수 × 한 자릿수 세로셈 연습</p>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button type="button" class="btn btn-outline" id="btnRegenerate" title="새로운 무작위 45문제 세트 생성">
+                    <span>🔄</span> 새 문제 만들기
+                </button>
+                <button type="button" class="btn btn-primary" id="btnGrade" title="지금 보고 있는 페이지 채점">
+                    <span>✏️</span> 채점하기
+                </button>
+                <button type="button" class="btn btn-secondary" id="btnPrint" title="A4 학습지 인쇄 및 PDF 저장">
+                    <span>🖨️</span> A4 학습지 인쇄
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 페이지 이동 탭 (1~5쪽, 답안지) -->
+    <nav class="tabs-nav" aria-label="학습지 페이지 선택">
+        <button type="button" class="tab-btn active" data-page="1">🌸 1 쪽</button>
+        <button type="button" class="tab-btn" data-page="2">🍓 2 쪽</button>
+        <button type="button" class="tab-btn" data-page="3">🧸 3 쪽</button>
+        <button type="button" class="tab-btn" data-page="4">⭐ 4 쪽</button>
+        <button type="button" class="tab-btn" data-page="5">🎈 5 쪽</button>
+        <button type="button" class="tab-btn answer-tab" data-page="6">📖 전체 답지</button>
+    </nav>
+
+    <!-- 메인 컨텐츠 영역 -->
+    <main class="main-content" id="pagesContainer">
+        <!-- 1~5쪽은 js/app.js에서 동적 생성됨 -->
+
+        <!-- 답안지 페이지 (기본 마크업 구조) -->
+        <section class="worksheet-page answer-page" id="answerSheetPage">
+            <div class="page-top-header">
+                <div class="page-title-badge">
+                    <span class="page-badge-icon">📖</span>
+                    <div>
+                        <h2 class="page-badge-title">정답 및 풀이 (1쪽 ~ 5쪽 모음)</h2>
+                        <span style="font-size: 13px; color: #9A8EA6;">과정별로 어떻게 풀었는지 차근차근 확인해보세요!</span>
+                    </div>
+                </div>
+            </div>
+            <div class="problems-grid" id="answerSheetGrid">
+                <!-- JS에서 동적 채움 -->
+            </div>
+        </section>
+    </main>
+
+    <!-- 하단 푸터 -->
+    <footer class="app-footer">
+        <div class="cute-icons">🐰 🐻 ☁️ ⭐ 🎈</div>
+        <p>포근하고 즐거운 초등 수학 세로셈 학습지 · 두 자릿수 곱하기 한 자릿수</p>
+    </footer>
+
+    <!-- 채점 결과 축하 모달 -->
+    <div class="score-modal-overlay" id="scoreModal">
+        <div class="score-card">
+            <div class="score-sticker" id="modalSticker">🌟</div>
+            <h2 id="modalTitle">참 잘했어요!</h2>
+            <p id="modalDesc">총 9문제 중 9문제를 모두 맞혔어요!</p>
+            <button type="button" class="btn btn-primary" id="btnCloseModal" style="width: 100%; justify-content: center;">
+                확인했어요!
+            </button>
+        </div>
+    </div>
+
+    <!-- 스크립트 연결 -->
+    <script src="js/math-generator.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
